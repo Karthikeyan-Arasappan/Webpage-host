@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: Guvi-AWS-Static-CICD-main/app
+    destination: /var/www/html
+hooks:
+  AfterInstall:
+    - location: Guvi-AWS-Static-CICD-main/scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
